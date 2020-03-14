@@ -1,0 +1,5 @@
+접속 (root로): cmd -> bin폴더 -> mysql -uroot -p
+db생성 : create database name;
+db삭제 : drop database name;
+db목록 : show databases;
+db열기 : USE name;
