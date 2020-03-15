@@ -1,5 +1,37 @@
 접속 (root로): cmd -> bin폴더 -> mysql -uroot -p
-db생성 : create database name;
-db삭제 : drop database name;
-db목록 : show databases;
-db열기 : USE name;
+db 생성 : create database name;
+db 삭제 : drop database name;
+db 목록 : show databases;
+db 고르기 : USE name;
+비밀번호 변경 : set password = password('password');
+--------------------------------------------------------------------------------------------
+테이블 목록 보기 : show tables;
+테이블 구조 보기 : desc 테이블이름; or describe 테이블 이름; or explain 테이블이름;
+테이블 이름변경 : rename table 테이블이름1 to 테이블이름2;
+---------------------------------------------------------------------------------------------
+cheat sheet 생성 : create table 테이블이름(
+		열이름 datatype(length) //ex id int(11) not null auto_increment, 
+		열이름 datatype(length) // 2번째 열 생성
+		primary key(c1) //ex primary key(id)
+		);
+-- not nul : 값이 없는 것(공백)을 허용하지 않음
+-- null : 값이 없음 허용
+-- auto_increment : 중복을 허용하지 않음
+-- primary key : 중복방지, 성능
+
+데이터 삽입 : insert into 테이블이름 (열1, 열2, ...) values('값1', '값2,...');
+-- 현재시간 함수 : now() 
+
+데이터 확인 : select 데이터1, 데이터2 (from 테이블이름) (where 열이름 = '값') (order by 형식)(limit 숫자);
+-- 모든 데이터 : *
+-- where : 정보 선택?
+-- order by : 정렬 방법 선택 (내림 차순 : desc)
+-- limit : 개수 제한
+
+데이터 변경 : update 테이블이름 set 열이름='값', 열이름='값' where 열이름=값;
+
+데이터 삭제 : delete from 테이블이름 where 열이름=값;
+
+---------------------------------------------------------------------------------------------
+left join : select 열1, 열2 from 테이블1 left join 테이블2 on 조건;
+-- ex)  select * from topic left join author on topic.author_id = author.id;
