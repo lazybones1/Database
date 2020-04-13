@@ -1,0 +1,30 @@
+로그인
+ sys AS sysdba (sys를 db관리자로서 사용)
+
+사용자 생성
+ create user 이름 identified by 비밀번호
+   ORA-65096: 공통 사용자 또는 롤 이름이 부적합합니다.오류 발생시
+   이름 앞 C## or 스크립트 alter session set "_oracle_script" = true; 입력
+
+권한 부여
+  grant 권한 to 사용자;
+
+권한
+  dba : database administrate (모든일 가능 권한)
+
+테이블 생성
+  create table 테이블이름(릴레이션 스키마);
+
+테이블 검색
+  select * from * where
+
+행 삽입
+  insert into 테이블이름 () values ();
+  commit;
+
+행 검색
+  select 선택 form 테이블 where 조건;
+
+  정렬 순서 : order by 값 조건
+  특정 페이지 숫자부터 보기 : offset 페이지 rows
+  특정 개수만 가저요기 : fetch next 개수 rows only;
