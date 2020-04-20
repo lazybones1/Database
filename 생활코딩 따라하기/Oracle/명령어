@@ -15,8 +15,15 @@
 테이블 생성
   create table 테이블이름(릴레이션 스키마);
 
+기본키 설정
+  테이블 생성시 제약조건
+  constraint 이름 primary key (값, ...);
+
 테이블 검색
   select * from * where
+
+테이블 제거
+  drop table 테이블 이름;
 
 행 삽입
   insert into 테이블이름 () values ();
@@ -28,3 +35,19 @@
   정렬 순서 : order by 값 조건
   특정 페이지 숫자부터 보기 : offset 페이지 rows
   특정 개수만 가저요기 : fetch next 개수 rows only;
+
+행 수정
+  update 테이블 set 내용 1 = '변경 내용1', 내용 2 = '변경 내용2' where 조건
+  commit;
+
+행 삭제
+  delete from 테이블 where 조건;
+  commit;
+
+시퀀스 생성
+  create sequence 이름
+  행 생성시 values 에 시퀀스이름.NEXTVAL;
+
+시퀀스 확인
+  select 시퀀스이름.CURRVAL from 테이블이름;
+    테이블 이름 대신 DUAL 사용 -> 중복 제거됨
